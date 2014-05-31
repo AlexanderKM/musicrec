@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from bands.models import Band
 
 def index(request):
-    return HttpResponse("Hello, world.")
+    return render(request, "index.html")
 
 def bandName(request, band_id):
     
