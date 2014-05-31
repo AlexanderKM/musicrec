@@ -3,16 +3,70 @@
 <!DOCTYPE html>
 	
 <html>
-	<head>
-			<meta charset="utf-8">
-			<title>{% block title %}REPLACEME{% endblock %}</title>
-			<link rel="stylesheet" href="{% static 'css/style.css' %}">
-			
-			{% block head-additions %}{% endblock %}
-	</head>
-		<body>
-			
-			{% block content %}{% endblock %}
-		</body>
+
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+	<title>{% block title %}REPLACEME{% endblock %}</title>
+		
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	
+	<!-- Custom styles for this template -->
+   	<link href="{% static 'css/cover.css' %}" rel="stylesheet">
+		
+		
+		
+		{% block head-additions %}{% endblock %}
+		
+</head>
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Cover</h3>
+              <ul class="nav masthead-nav">
+              	
+                <li {% if nav_page == "index" %} class="active" {% endif %}><a href="#">Home</a></li>
+                <li {% if nav_page == "search" %} class="active" {% endif %}><a href="{% url 'search' %}">Search</a></li>
+                <li><a href="#">Contact</a></li>
+                {% block active %}
+                {% endblock %}
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            {% block content %}{% endblock %}
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+  </body>
 </html>
 	

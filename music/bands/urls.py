@@ -4,5 +4,6 @@ from bands import views
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
+    url(r'^bands/', views.search, name='search'),
     url(r'^bands/(?P<band_id>\d+)/$', views.bandName, name='bandName'),
 )
