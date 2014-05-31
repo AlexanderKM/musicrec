@@ -14,8 +14,11 @@ def bandName(request, band_id):
     except:
         raise Http404
     
+    bands = Band.objects.filter(related=band)
+    
     return render(request, "view_band.html", {
-        "band": band,
+        "main_band": band,
+        "bands":bands,
         "nav_page": "search",
     })
     

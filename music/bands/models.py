@@ -11,6 +11,7 @@ class Band(models.Model):
     name = models.CharField(max_length=50)
     date_added = models.DateTimeField('date added')
     genre = models.ForeignKey(Genre)
+    related = models.ManyToManyField("self", blank=True)
     
     def __str__(self):
         return self.name

@@ -1,14 +1,17 @@
 {% extends 'main.html' %}
 {% load staticfiles %}
 
-{% block title %}{{ band }}{% endblock %}
+{% block title %}{{ main_band }}{% endblock %}
 
 {% block content %}
-<h1 class="cover-heading">{{ band }}</h1>
-	<p class="lead">Form here</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-default">Learn more</a>
+<h1 class="cover-heading">{{ main_band }}</h1>
+	<p>
+	{% for band in bands %}
+	<button type=​"button" class=​"btn btn-lg btn-default">{{ band }}​</button>​
+	
+    {% endfor %}
     </p>
+    
 
 
 {% endblock %}
