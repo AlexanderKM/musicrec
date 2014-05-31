@@ -36,9 +36,9 @@
               <h3 class="masthead-brand">Cover</h3>
               <ul class="nav masthead-nav">
               	
-                <li {% if nav_page == "index" %} class="active" {% endif %}><a href="#">Home</a></li>
+                <li {% if nav_page == "index" %} class="active" {% endif %}><a href="{% url 'index' %}">Home</a></li>
                 <li {% if nav_page == "search" %} class="active" {% endif %}><a href="{% url 'search' %}">Search</a></li>
-                <li><a href="#">Contact</a></li>
+                <li {% if nav_page == "contact" %} class="active" {% endif %}><a href="{% url 'contact' %}">Contact</a></li>
                 {% block active %}
                 {% endblock %}
               </ul>

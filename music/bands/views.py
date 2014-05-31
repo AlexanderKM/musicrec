@@ -16,10 +16,15 @@ def bandName(request, band_id):
     
     return render(request, "view_band.html", {
         "band": band,
-        "nav_page": "band",
+        "nav_page": "search",
     })
     
 def search(request):
     return render(request, "search.html", {
         "nav_page": "search",
+    })
+    
+def contact(request):
+    return render(request, "contact.html", {
+        "nav_page": "contact",
     })
