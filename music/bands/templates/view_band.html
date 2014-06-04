@@ -4,10 +4,14 @@
 {% block title %}{{ main_band }}{% endblock %}
 
 {% block content %}
-<h1 class="cover-heading">{{ main_band }}</h1>
+<div class="jumbotron">
+<p>hey</p>
+<h1>{{ main_band }}</h1>
+</div>
 	<p>
 	{% for band in bands %}
-	<button type=​"button" class=​"btn btn-lg btn-default">{{ band }}​</button>​
+	<p>hey</p>
+	<a class="btn btn-lg btn-primary" href="{% url 'bandName' band.id %}">{{ band }}</a>
 	
     {% endfor %}
     </p>
