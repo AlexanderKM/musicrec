@@ -5,12 +5,10 @@
 
 {% block content %}
 <div class="jumbotron">
-<p>hey</p>
 <h1>{{ main_band }}</h1>
 </div>
 	<p>
 	{% for band in bands %}
-	<p>hey</p>
 	<a class="btn btn-lg btn-primary" href="{% url 'bandName' band.id %}">{{ band }}</a>
 	
     {% endfor %}
