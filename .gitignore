@@ -2,3 +2,4 @@ database
 
 music/bands/__pycache__/
 music/music/__pycache__/
+*.pyc
