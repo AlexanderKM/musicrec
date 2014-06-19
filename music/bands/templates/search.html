@@ -4,6 +4,11 @@
 {% block title %}Search{% endblock %}
 
 {% block content %}
+{% if error %}
+<div class="alert alert-danger">
+<strong>{{ error }}</strong>
+</div>
+{% endif %}
 <h1 class="cover-heading">Search for a band:</h1>
 	<p class="lead">Form here</p>
     <p class="lead">

@@ -1,5 +1,5 @@
 from django.http import HttpResponse, Http404
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from bands.models import Band
 from bands.forms import SearchBandForm
 
@@ -29,17 +29,21 @@ def search(request):
         if form.is_valid():
             bandName = form.cleaned_data['bandName']
             
-            band = Band.objects.filter(name=bandName)
+            bands = Band.objects.filter(name=bandName)
             
-            bands = Band.objects.filter(related=band)
+            if len(bands) > 0:
+                band=bands[0]
             
-            print("hey")
             
-            return render(request, "view_band.html", {
-                "main_band": band,
-                "bands":bands,
-                "nav_page": "search",
-            })
+            
+                return redirect("bandName", band_id = band.id)
+            else:
+                error = "The band '" + bandName + "' was not found."
+                return render(request, "search.html", {
+                            "nav_page": "search",
+                            "form": form,
+                            "error":error,
+                            })
             
     else:
         form = SearchBandForm()
