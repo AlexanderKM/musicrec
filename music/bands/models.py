@@ -4,7 +4,7 @@ import datetime
     
 class Genre(models.Model):
     name = models.CharField(max_length=50)
-    date_added = models.DateTimeField('date added')
+    date_added = models.DateTimeField(default=datetime.datetime.now())
     
     def __str__(self):
         return self.name
